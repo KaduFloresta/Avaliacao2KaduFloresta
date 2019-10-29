@@ -111,6 +111,7 @@ public class Principal {
 				filme10.mostrarFilme();
 				locacao.AdicFilme(filme1);
 				locacao.AdicFilme(filme5);
+				locacao.AdicFilme(filme10);
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
 				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
