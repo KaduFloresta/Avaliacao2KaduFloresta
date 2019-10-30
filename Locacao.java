@@ -11,7 +11,9 @@ public class Locacao {
 	String dataLoc;
 	String dataDevolucao;
 	Double valorTotal;
+	int filmesLocados;
 
+	// Lista de Filmes
 	List<Filme> filmes = new ArrayList<>();
 	Calendar dataX = Calendar.getInstance();
 
@@ -24,12 +26,15 @@ public class Locacao {
 		this.cliente.adicionarLocacao(this);
 	}
 
-	// Lista de Filmes
+	// Adição de Filmes
 	void AdicFilme(Filme filme) {
 		this.filmes.add(filme);
+		//Contador Filme Locado
+		filme.filmeLocado();
+		this.cliente.qtdeFilmeLocados();
 	}
 
-	// Método com o Valor total das locações (Preço)
+	// Método com o Valor Total das Locações
 	double PrecoTotal() {
 		double total = 0;
 		for (Filme filme : filmes) {
@@ -38,20 +43,18 @@ public class Locacao {
 		return total;
 	}
 
-	// Método com a quantidade de filmes locados
+	// Método com a Quantidade de Filmes Locados
 	int QtdeFilmesLoc() {
 		return this.filmes.size();
 	}
 
-	// A data de devolução deverá ser calculada com base na Data de Locação
-	// e a quantidade de dias para Devolução que o cliente tem disponível
-	// na locadora.
+	//Calculo Data de Devolução 
 	String calculoData() {
 		Date dataAtual = new Date();
 		dataX.setTime(dataAtual);
 		dataX.add(Calendar.DATE, cliente.diaDev);
 
-		// Formatando a impressão da data
+		// Formatando a Impressão da Data
 		DateFormat dataEdit = DateFormat.getDateInstance(DateFormat.SHORT);
 
 		return dataEdit.format(dataX.getTime());

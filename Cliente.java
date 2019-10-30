@@ -2,32 +2,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-
+	// Atributos
 	int idCliente;
 	String nome;
 	String dataNasc;
 	String cpf;
 	int diaDev;
-	int filmesLoc;
+	int filmesLocados;
 	List<Locacao> locacoes = new ArrayList<>();
 
 	// Construtor
 	public Cliente(int idCliente, String nome, String dataNasc, String cpf, int diaDev) {
-		// Atributos
+		
 		this.idCliente = idCliente;
 		this.nome = nome;
 		this.dataNasc = dataNasc;
 		this.cpf = cpf;
 		this.diaDev = diaDev;
-		this.filmesLoc = 0;
+		this.filmesLocados = 0;
 	}
-
-	// Método com a Quantidade de Filmes locados
-	int QtdeFimesLocCliente(int filmesLoc) {
-		return this.filmesLoc = filmesLoc;
+	  
+	// Método com a Quantidade de Filmes Locados
+	public void qtdeFilmeLocados(){
+		this.filmesLocados+=1;
 	}
-
-	// Impressão Dados do CLiente
+	//Impressão Dados dos Clientes
 	public void mostrarCliente() {
 		System.out.println("----------------CLIENTE----------------");
 		System.out.println("--> Nº ID DO CLIENTE: " + idCliente);
@@ -35,23 +34,22 @@ public class Cliente {
 		System.out.println("-> DATA DE NASCIMENTO: " + dataNasc);
 		System.out.println("-> CPF: " + cpf);
 		System.out.println("-> DIAS P/ DEVOLUÇÃO: " + diaDev);
-		System.out.println("-> QTDE DE LOCAÇÕES: " + filmesLoc);
+		System.out.println("-> QTDE TOTAL DE LOCAÇÕES: " + filmesLocados);
 		System.out.println("----------------------------------------");
 	}
+	// Adição de Locações 
+	void adicionarLocacao(Locacao locacao){
+        this.locacoes.add(locacao);
+    }
 
-	void adicionarLocacao(Locacao locacao) {
-		this.locacoes.add(locacao);
-	}
-
-	// Lista de locações
-	int locacoes() {
+	//Lista de locações
+	int locacoes(){
 		int qtd = 0;
-		for (Locacao locacao : this.locacoes) {
-			for (Filme filme : locacao.filmes) {
+		for(Locacao locacao :this.locacoes){
+			for(Filme filme: locacao.filmes){
 				qtd++;
 			}
 		}
-
 		return qtd;
 	}
 }

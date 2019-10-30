@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Principal {
 
 	public static void main(String[] args) {
-		Scanner entrada = new Scanner(System.in);
+		Scanner entrada = new Scanner(System.in); //Entrada do Switch (IdCliente)
 
-		System.out.println("LOCADORA - Kadu Floresta");
+		System.out.println("LOCADORA - Kadu Floresta\n   ");
 
 		// Lista com 5 Clientes
 		Cliente cliente1 = new Cliente(1, "Adriano Medeiros Sá", "21/01/1978", "123.123.123-12", 3);
@@ -54,67 +54,72 @@ public class Principal {
 			idCliente = entrada.nextInt();
 			switch (idCliente) {
 			case 1:
+				/* OUTRA MANEIRA DE ADD LOCAÇÃO - FILMES
+				cliente1.locacoes.add(new Locacao(01, cliente1));
+				cliente1.locacoes.get(0).AdicFilme(filme1);
+				*/
 				cliente1.mostrarCliente(); // Impressão CLIENTE "1"
 				locacao = new Locacao(01, cliente1); // Nova locações
-				filme1.mostrarFilme(); // Impressão dos Filmes
-				filme6.mostrarFilme(); //          "
-				filme10.mostrarFilme();//          "
 				locacao.AdicFilme(filme1); // Adicionando Filme
-				locacao.AdicFilme(filme6); //       "
-				locacao.AdicFilme(filme10);//       "
+				locacao.AdicFilme(filme6); //        "
+				locacao.AdicFilme(filme10);//        "
+				filme1.mostrarFilme(); // Impressão dos Filmes
+				filme6.mostrarFilme(); //         "
+				filme10.mostrarFilme();//         "
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
-				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				System.out.println("-> QTDE DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
 				break;
 			case 2:
 				cliente2.mostrarCliente();
-				locacao = new Locacao(02, cliente2);
-				filme2.mostrarFilme();
-				filme7.mostrarFilme();
+				locacao = new Locacao(02, cliente2);				
 				locacao.AdicFilme(filme2);
 				locacao.AdicFilme(filme7);
+				filme2.mostrarFilme();
+				filme7.mostrarFilme();
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
-				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				System.out.println("-> QTDE DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
 				break;
 			case 3:
 				cliente3.mostrarCliente();
-				locacao = new Locacao(03, cliente3);
-				filme3.mostrarFilme();
-				filme6.mostrarFilme();
-				filme7.mostrarFilme();
-				filme8.mostrarFilme();
+				locacao = new Locacao(03, cliente3);				
 				locacao.AdicFilme(filme3);
 				locacao.AdicFilme(filme6);
 				locacao.AdicFilme(filme7);
 				locacao.AdicFilme(filme8);
+				filme3.mostrarFilme();
+				filme6.mostrarFilme();
+				filme7.mostrarFilme();
+				filme8.mostrarFilme();
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
-				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				System.out.println("-> QTDE DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				
 				break;
 			case 4:
 				cliente4.mostrarCliente();
-				locacao = new Locacao(04, cliente1);
-				filme4.mostrarFilme();
-				filme9.mostrarFilme();
+				locacao = new Locacao(04, cliente1);				
 				locacao.AdicFilme(filme4);
 				locacao.AdicFilme(filme9);
+				filme4.mostrarFilme();
+				filme9.mostrarFilme();
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
-				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				System.out.println("-> QTDE DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
 				break;
 			case 5:
 				cliente5.mostrarCliente();
-				locacao = new Locacao(05, cliente1);
-				filme1.mostrarFilme();
-				filme5.mostrarFilme();
-				filme10.mostrarFilme();
+				locacao = new Locacao(05, cliente1);				
 				locacao.AdicFilme(filme1);
 				locacao.AdicFilme(filme5);
 				locacao.AdicFilme(filme10);
+				filme1.mostrarFilme();
+				filme5.mostrarFilme();
+				filme10.mostrarFilme();
 				System.out.println("-> PREÇO TOTAL DAS LOCAÇÕES: R$ " + locacao.PrecoTotal());
 				System.out.println("-> DATA DE DEVOLUÇÃO: " + locacao.calculoData());
-				System.out.println("-> QTDE TOTAL DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
+				System.out.println("-> QTDE DE FILMES LOCADOS: " + locacao.QtdeFilmesLoc());
 				break;
 			}
 		} while (idCliente <= 5);
