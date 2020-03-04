@@ -11,7 +11,9 @@ public class Locacao {
 	String dataLoc;
 	String dataDevolucao;
 	Double valorTotal;
+	int filmesLocados;
 
+	// Lista de Filmes
 	List<Filme> filmes = new ArrayList<>();
 	Calendar dataX = Calendar.getInstance();
 
@@ -27,9 +29,11 @@ public class Locacao {
 	// Adição de Filmes
 	void AdicFilme(Filme filme) {
 		this.filmes.add(filme);
+		//Contador Filme Locado
+		filme.filmeLocado();
+		this.cliente.qtdeFilmeLocados();
 	}
 
-	// Método com o Valor Total das Locações (Preço)
 	double PrecoTotal() {
 		double total = 0;
 		for (Filme filme : filmes) {
@@ -49,7 +53,7 @@ public class Locacao {
 		dataX.setTime(dataAtual);
 		dataX.add(Calendar.DATE, cliente.diaDev);
 
-		// Formatando a impressão da data
+		// Formatando a Impressão da Data
 		DateFormat dataEdit = DateFormat.getDateInstance(DateFormat.SHORT);
 
 		return dataEdit.format(dataX.getTime());
