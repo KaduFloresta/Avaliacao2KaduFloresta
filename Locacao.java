@@ -24,12 +24,12 @@ public class Locacao {
 		this.cliente.adicionarLocacao(this);
 	}
 
-	// Lista de Filmes
+	// Adição de Filmes
 	void AdicFilme(Filme filme) {
 		this.filmes.add(filme);
 	}
 
-	// Método com o Valor total das locações (Preço)
+	// Método com o Valor Total das Locações (Preço)
 	double PrecoTotal() {
 		double total = 0;
 		for (Filme filme : filmes) {
@@ -38,14 +38,12 @@ public class Locacao {
 		return total;
 	}
 
-	// Método com a quantidade de filmes locados
+	// Método com a Quantidade de Filmes Locados
 	int QtdeFilmesLoc() {
 		return this.filmes.size();
 	}
 
-	// A data de devolução deverá ser calculada com base na Data de Locação
-	// e a quantidade de dias para Devolução que o cliente tem disponível
-	// na locadora.
+	// Calculo Data de Devolução
 	String calculoData() {
 		Date dataAtual = new Date();
 		dataX.setTime(dataAtual);

@@ -19,7 +19,7 @@ public class Filme {
         this.locado = 0;
     }
 
-    // Método com a Quantidade de locações realizadas
+    // Método com a Quantidade de locações Realizadas
     public void filmeLocado() {
         this.estoque -= 1;
         this.locado += 1;

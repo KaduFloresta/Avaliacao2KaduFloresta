@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
-
+	// Atributos
 	int idCliente;
 	String nome;
 	String dataNasc;
@@ -38,7 +38,7 @@ public class Cliente {
 		System.out.println("-> QTDE DE LOCAÇÕES: " + filmesLoc);
 		System.out.println("----------------------------------------");
 	}
-
+	// Adição de Locações
 	void adicionarLocacao(Locacao locacao) {
 		this.locacoes.add(locacao);
 	}
